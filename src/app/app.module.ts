@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './components/home/home.component';
     UserLoginComponent,
     UserRegistrationComponent,
     ForgotPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

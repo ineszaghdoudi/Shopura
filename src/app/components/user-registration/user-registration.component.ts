@@ -28,8 +28,13 @@ export class UserRegistrationComponent implements OnInit {
   userRegister(){
     console.log(this.user);
     this.registerService.registerUser(this.user).subscribe(data=>{
-      alert("User added successfully")
+      alert("User added successfully");
+      this.gotoLogIn();
     }, error=>alert("Sorry user wasn't added"));
+  }
+
+  gotoHome(){
+    this.router.navigate(['/home'])
   }
 
 }

@@ -25,6 +25,7 @@ export class UserLoginComponent implements OnInit {
     console.log(this.user);
     this.loginuserservice.loginUser(this.user).subscribe(data=>{
       alert("Login Successful");
+      this.router.navigate(['/admin']);
     }, error=>alert("Sorry please enter correct email and password"));
   }
 
@@ -34,6 +35,10 @@ export class UserLoginComponent implements OnInit {
 
   gotoForgetPassword(){
     this.router.navigate(['/forgot-password'])
+  }
+
+  gotoHome(){
+    this.router.navigate(['/home'])
   }
 
 
