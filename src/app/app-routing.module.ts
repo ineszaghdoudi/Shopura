@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './components/admin/admin.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path:'',
     component: HomeComponent,
+  },
+  {
+    path:'admin',
+    component: AdminComponent,
   },
   {
     path:'home',
