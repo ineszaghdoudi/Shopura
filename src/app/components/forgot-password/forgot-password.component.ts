@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserRegistrationService } from 'src/app/services/user-registration.service';
-import { User } from 'src/app/user';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-forgot-password',
