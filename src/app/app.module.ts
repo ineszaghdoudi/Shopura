@@ -10,6 +10,8 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AdminUserComponent } from './components/admin/admin-user/admin-user.component';
+import { AdminProductsComponent } from './components/admin/admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AdminComponent } from './components/admin/admin.component';
     UserRegistrationComponent,
     ForgotPasswordComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    AdminUserComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,
