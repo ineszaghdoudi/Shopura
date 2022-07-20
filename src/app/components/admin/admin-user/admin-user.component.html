@@ -85,6 +85,10 @@
         <div class="modal-body">
          
             <form [formGroup]="userDetail">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Id</label>
+                <input type="text" formControlName="id" class="form-control" id="id" aria-describedby="emailHelp"  readonly="readonly">
+              </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Full name</label>
                     <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
@@ -145,13 +149,10 @@
                       <th>
                           Phone
                       </th>
-                      <th style="width: 8%" class="text-center">
+                      <th style="width: 6%" class="text-center">
                           Password
                       </th>
-                      <th style="width: 8%" class="text-center">
-                        CPassword
-                    </th>
-                      
+                                            
                       <th style="width: 20%" class="text-center">
                         Action
                     </th>
@@ -160,23 +161,21 @@
               </thead>
               <tbody>
                   <tr *ngFor="let user of userList">
-                      <td>
-                          #
-                      </td>
+                      <td> {{user.id}} </td>
                       <td> {{user.name}} </td>
                       <td> {{user.email}} </td>
                       <td> {{user.phone}} </td>
-                      <td> {{user.password}} </td>
-                      <td> {{user.cpassword}} </td>
+                      <td> ******** </td>
+                      
                       <td class="project-actions text-right">
                           
-                          <button (click)="openModalEdit()" (click)="editUser(user)" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editUser">
+                          <button (click)="openModalEdit()" (click)="editUser(user)" class="btn btn-outline-primary " data-bs-toggle="modal" data-bs-target="#editUser">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </button>
                           
-                          <button (click)="deleteUser(user)" class="btn btn-outline-danger " href="#">
+                          <button (click)="deleteUser(user)" style="margin-left:6px;" class="btn btn-outline-danger " href="#">
                               <i class="fas fa-trash">
                               </i>
                                Delete

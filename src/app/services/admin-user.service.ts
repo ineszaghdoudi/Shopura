@@ -38,7 +38,7 @@ export class AdminUserService {
   }
 
   deleteUser(user: User): Observable<User> {
-    return this.httpClient.delete<User>(`${this.deleteUsrURL}`+'/'+`${user.email}`);
+    return this.httpClient.delete<User>(`${this.deleteUsrURL}`+'/'+`${user.id}`);
   }
 }
  

@@ -34,6 +34,7 @@ export class AdminUserComponent implements OnInit {
     );
 
     this.userDetail = this.formBuilder.group({
+      id : [''],
       name : [''],
       email : [''],
       phone: [''],
@@ -51,8 +52,10 @@ export class AdminUserComponent implements OnInit {
     this.userObj.cpassword = this.userDetail.value.cpassword;
 
     this.usrService.addUser(this.userObj).subscribe(res=>{
+      
       console.log(res);
-      alert("User added successfully");
+      this.clear();
+      this.closeModal();
       this.getAllUsers();
     }, err =>{
       console.log(err);
@@ -61,6 +64,7 @@ export class AdminUserComponent implements OnInit {
   }
 
   editUser(usr : User){
+    this.userDetail.controls['id'].setValue(usr.id);
     this.userDetail.controls['name'].setValue(usr.name);
     this.userDetail.controls['email'].setValue(usr.email);
     this.userDetail.controls['phone'].setValue(usr.phone);
@@ -69,6 +73,7 @@ export class AdminUserComponent implements OnInit {
   }
 
   updateUser(){
+    this.userObj.id = this.userDetail.value.id;
     this.userObj.name = this.userDetail.value.name;
     this.userObj.email = this.userDetail.value.email;
     this.userObj.phone = this.userDetail.value.phone;
@@ -77,8 +82,10 @@ export class AdminUserComponent implements OnInit {
 
     this.usrService.updateUser(this.userObj).subscribe(res=>{
       console.log(res);
-      alert("User edited successfully");
+      this.closeModalEdit();
       this.getAllUsers();
+      
+      alert("User successfully edited");
     }, err =>{
       console.log(err);
       alert("Sorry user wasn't edited");
@@ -118,5 +125,16 @@ export class AdminUserComponent implements OnInit {
 
   closeModalEdit(){
     this.formModalEdit.hide();
+  }
+
+  clear() {
+    this.userDetail = this.formBuilder.group({
+      id : [''],
+      name : [''],
+      email : [''],
+      phone: [''],
+      password: [''],
+      cpassword: ['']
+    })
   }
 }
